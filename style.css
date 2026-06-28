@@ -104,14 +104,19 @@ body {
 .btn-call:hover, .btn-whatsapp-top:hover { transform: translateY(-2px); }
 
 /* --- YAHAN PAR BADLAV KIYA HAI --- */
+/* Main Section Layout - Fixed Banner Scaling and Padding */
 .hero-section {
-    padding: 0px 0px 110px 50px;
+    padding: 70px 50px 110px 50px;
     background: linear-gradient(135deg, #f4f8fc 0%, #e9f1f8 100%);
     position: relative;
     background-image: url('banner.jpg'); 
     background-repeat: no-repeat;
-    background-position: right center; 
-    background-size: contain; 
+    
+    /* 1. Image ko right side mein upar aur neeche se bilkul stretch/fix karne ke liye */
+    background-position: right top; 
+    
+    /* 2. Isse banner upar-neeche poora fit ho jayega aur compress bhi nahi hoga */
+    background-size: auto 100%; 
 }
 
 .hero-container {
