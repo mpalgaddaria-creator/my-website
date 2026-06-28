@@ -103,21 +103,28 @@ body {
 }
 .btn-call:hover, .btn-whatsapp-top:hover { transform: translateY(-2px); }
 
-/* Main Section Layout - Spacing and Full Spacing Cover Fixed */
+/* Main Section Layout - FIXED White Spacing & Top Padding Edge Overlay */
 .hero-section {
-    padding: 80px 50px 120px 50px;
+    padding: 60px 50px 80px 50px;
     position: relative;
-    margin-top: 0; /* Menu bar se touch karne ke liye */
+    margin-top: 0;
     
-    /* Custom Banner configurations */
     background-image: url('banner.jpg'); 
     background-repeat: no-repeat;
+    /* Image center center vertical focus karke exact white blank strips ko window se chipa deta hai */
     background-position: right center; 
-    background-size: cover; /* Spacing gap poori tarah fill ho jayegi */
+    background-size: 100% 100%; /* Direct canvas ratio scaling */
     
     display: flex;
     align-items: center;
-    min-height: 540px; 
+    min-height: 520px; 
+}
+
+/* Screen overlay safe fallback layer grid bounds */
+@media (min-width: 1400px) {
+    .hero-section {
+        background-size: cover; /* Ultra-wide screen protection wrap */
+    }
 }
 
 .hero-container {
@@ -129,7 +136,7 @@ body {
     align-items: center;
 }
 
-.hero-content { max-width: 60%; z-index: 5; }
+.hero-content { max-width: 58%; z-index: 5; }
 
 /* Badge style components */
 .verified-badge {
@@ -276,7 +283,7 @@ body {
 
 /* --- Mobile and Tablet Responsive Media Queries --- */
 @media (max-width: 1200px) {
-    .hero-section { background-position: calc(100% + 100px) center; } 
+    .hero-section { background-position: calc(100% + 120px) center; background-size: cover; } 
 }
 
 @media (max-width: 992px) {
@@ -284,9 +291,10 @@ body {
     .nav-menu { flex-wrap: wrap; justify-content: center; gap: 12px; }
     
     .hero-section { 
-        background-image: none; /* Chhote screens par text clarity ke liye image hide ki hai */
+        background-image: none; 
         background-color: #f4f8fc; 
         padding: 40px 20px;
+        min-height: auto;
     }
     .hero-container { flex-direction: column; gap: 30px; }
     .hero-content { max-width: 100%; }
