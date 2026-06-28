@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Day Labour - Hire Verified Labour Within Minutes</title>
+    <title>1Day Labour - Hire Verified Labour</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -53,16 +53,16 @@
         </nav>
 
         <div class="header-actions">
-            <a href="#" class="btn-post-req"><i class="fa-solid fa-circle-plus"></i> Post Requirement</a>
-            <a href="#" class="btn-login"><i class="fa-regular fa-user"></i> Login / Signup</a>
+            <a href="tel:8743959405" class="btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+            <a href="https://wa.me/918882301806" target="_blank" class="btn-whatsapp-top"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         </div>
     </header>
 
     <section class="hero-section">
         <div class="hero-container">
-            
             <div class="hero-content">
-                <div class="verified-badge">
+                
+                <div class="verified-badge slide-in">
                     <i class="fa-solid fa-users"></i>
                     <div>
                         <strong>50,000+</strong>
@@ -70,17 +70,17 @@
                     </div>
                 </div>
 
-                <h1>Hire Verified Labour <br>in Your City <span class="highlight-text">Within Minutes</span></h1>
-                <p>Find skilled & unskilled labour for any work - Just for 1 Day or as per your requirement.</p>
+                <h1 class="fade-in">Hire Verified Labour <br>in Your City <span class="highlight-text">Within Minutes</span></h1>
+                <p class="fade-in delay-1">Find skilled & unskilled labour for any work - Just for 1 Day or as per your requirement.</p>
                 
-                <div class="features-list">
+                <div class="features-list fade-in delay-1">
                     <span><i class="fa-solid fa-circle-check"></i> Verified Labour</span>
                     <span><i class="fa-solid fa-circle-check"></i> Instant Booking</span>
                     <span><i class="fa-solid fa-circle-check"></i> Affordable Price</span>
                     <span><i class="fa-solid fa-circle-check"></i> 100% Reliable</span>
                 </div>
 
-                <div class="enquiry-form-card">
+                <div class="search-card enquiry-form-card fade-in delay-2">
                     <div class="search-field">
                         <label><i class="fa-solid fa-user"></i> Name</label>
                         <input type="text" id="eq_name" placeholder="Enter Name" required>
@@ -97,10 +97,10 @@
                         <label><i class="fa-regular fa-comment-dots"></i> Message</label>
                         <input type="text" id="eq_message" placeholder="Requirement text...">
                     </div>
-                    <button class="btn-search" onclick="triggerWhatsAppForm()">Get Labour Now <i class="fa-solid fa-arrow-right-long"></i></button>
+                    <button class="btn-search" onclick="triggerWhatsAppEnquiry()">Get Labour Now <i class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
 
-                <div class="popular-searches">
+                <div class="popular-searches fade-in delay-2">
                     <span>Popular Searches:</span>
                     <a href="#">Painter in Delhi</a>
                     <a href="#">Electrician in Gurgaon</a>
@@ -110,44 +110,46 @@
                 </div>
             </div>
 
-            <div class="hero-right-badges">
-                <div class="trust-box">
+            <div class="hero-right-badges slide-in">
+                <div class="trust-box float-animation">
                     <i class="fa-solid fa-shield-halved icon-green"></i>
                     <span>Aadhaar Verified</span>
                 </div>
-                <div class="trust-box">
+                <div class="trust-box float-animation delay-1">
                     <i class="fa-solid fa-star icon-orange"></i>
                     <span><strong>4.8/5</strong> Customer Rating</span>
                 </div>
-                <div class="trust-box">
-                    <i class="fa-solid fa-map-location-dot icon-blue"></i>
+                <div class="trust-box float-animation delay-2">
+                    <i class="fa-solid fa-map-location-dot icon-green"></i>
                     <span><strong>200+</strong> Cities Covered</span>
                 </div>
             </div>
-
         </div>
     </section>
 
     <script>
-    function triggerWhatsAppForm() {
+    function triggerWhatsAppEnquiry() {
         const name = document.getElementById('eq_name').value.trim();
         const mobile = document.getElementById('eq_phone').value.trim();
         const city = document.getElementById('eq_city').value.trim();
         const message = document.getElementById('eq_message').value.trim() || 'Not Specified';
 
         if(!name || !mobile || !city) {
-            alert("Kripya Name, Mobile, aur City fill karein.");
+            alert("Kripya Name, Mobile, aur City fields ko fill karein.");
             return;
         }
 
-        const targetNum = "918743959405";
-        let textMsg = `Hello 1Day Labour,\nI want to hire labour.\n\nDetails:\n`;
-        textMsg += `• Name: ${name}\n`;
-        textMsg += `• Mobile: ${mobile}\n`;
-        textMsg += `• City: ${city}\n`;
-        textMsg += `• Requirement: ${message}`;
+        const targetNum = "918882301806";
+        
+        // Exact formatting as requested
+        let textMsg = `hello\nI would like to hire labour \ndetails:\n`;
+        textMsg += `name - ${name}\n`;
+        textMsg += `mobile - ${mobile}\n`;
+        textMsg += `city - ${city}\n`;
+        textMsg += `message - ${message}`;
 
-        window.open(`https://api.whatsapp.com/send?phone=${targetNum}&text=${encodeURIComponent(textMsg)}`, '_blank');
+        const finalUrl = `https://api.whatsapp.com/send?phone=${targetNum}&text=${encodeURIComponent(textMsg)}`;
+        window.open(finalUrl, '_blank');
     }
     </script>
 </body>
