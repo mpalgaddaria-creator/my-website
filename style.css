@@ -268,12 +268,17 @@ body {
     50% { transform: translateY(-6px); }
 }
 
-/* Responsive Adaptive Tweak */
-@media (max-width: 992px) {
-    .enquiry-form-card { border-radius: 20px; flex-direction: column; padding: 20px; }
-    .search-field { border-right: none; border-bottom: 1px solid #eee; padding: 10px 0; width: 100%; }
-    .btn-search { width: 100%; justify-content: center; margin-top: 10px; }
-    .hero-section { background-image: none; }
-    .hero-container { flex-direction: column; gap: 40px; }
-    .hero-content { max-width: 100%; }
+/* Hero Section Layout with custom Banner */
+.hero-section {
+    padding: 80px 50px 120px 50px;
+    position: relative;
+    
+    /* Aapki image_15764b.jpg yahan background mein fit ho jayegi */
+    background-image: url('banner.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* Poore section mein perfect stretch hogi */
+    
+    display: flex;
+    align-items: center;
 }
