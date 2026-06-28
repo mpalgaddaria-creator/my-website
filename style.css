@@ -105,7 +105,7 @@ body {
 
 /* --- YAHAN PAR BADLAV KIYA HAI --- */
 .hero-section {
-    padding: 70px 50px 110px 50px;
+    padding: 0px 0px 110px 50px;
     background: linear-gradient(135deg, #f4f8fc 0%, #e9f1f8 100%);
     position: relative;
     background-image: url('banner.jpg'); 
