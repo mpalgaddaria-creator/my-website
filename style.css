@@ -103,18 +103,21 @@ body {
 }
 .btn-call:hover, .btn-whatsapp-top:hover { transform: translateY(-2px); }
 
-/* Main Section Layout Fixed Position for Custom Banner */
+/* Main Section Layout - Spacing and Full Spacing Cover Fixed */
 .hero-section {
     padding: 80px 50px 120px 50px;
     position: relative;
-    background-color: #fff; /* Image white background ke sath merge hoga */
+    margin-top: 0; /* Menu bar se touch karne ke liye */
+    
+    /* Custom Banner configurations */
     background-image: url('banner.jpg'); 
     background-repeat: no-repeat;
-    background-position: right center; /* Workers right side mein perfectly fit rahenge */
-    background-size: contain; /* Banner stretch ya distort nahi hoga */
+    background-position: right center; 
+    background-size: cover; /* Spacing gap poori tarah fill ho jayegi */
+    
     display: flex;
     align-items: center;
-    min-height: 520px;
+    min-height: 540px; 
 }
 
 .hero-container {
@@ -271,30 +274,33 @@ body {
     50% { transform: translateY(-6px); }
 }
 
-/* --- Mobile Responsive Updates --- */
+/* --- Mobile and Tablet Responsive Media Queries --- */
 @media (max-width: 1200px) {
-    .hero-section { background-position: calc(100% + 150px) center; } /* Wider screen safety shift */
+    .hero-section { background-position: calc(100% + 100px) center; } 
 }
 
 @media (max-width: 992px) {
     .main-header { padding: 15px 20px; flex-direction: column; gap: 15px; }
     .nav-menu { flex-wrap: wrap; justify-content: center; gap: 12px; }
+    
     .hero-section { 
-        background-image: none; /* Mobile screens par image hat jayegi taaki text clear dikhe */
+        background-image: none; /* Chhote screens par text clarity ke liye image hide ki hai */
         background-color: #f4f8fc; 
         padding: 40px 20px;
     }
     .hero-container { flex-direction: column; gap: 30px; }
     .hero-content { max-width: 100%; }
+    
     .enquiry-form-card { border-radius: 20px; flex-direction: column; padding: 20px; gap: 15px; }
     .search-field { border-right: none; border-bottom: 1px solid #edf2f7; padding: 8px 0; width: 100%; }
     .btn-search { width: 100%; justify-content: center; border-radius: 10px; }
+    
     .hero-right-badges { flex-direction: row; flex-wrap: wrap; justify-content: center; width: 100%; }
     .trust-box { min-width: 160px; }
 }
 
 @media (max-width: 576px) {
-    .top-bar { display: none; } /* Mobile data optimization space saving */
+    .top-bar { display: none; } 
     .hero-content h1 { font-size: 30px; }
     .highlight-text { font-size: 36px; }
     .features-list { flex-direction: column; gap: 8px; }
