@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1Day Labour - Hire Verified Labour</title>
-    <!-- Google Fonts: Poppins for clean text & Caveat for cursive highlight -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-left">
             <span><i class="fa-solid fa-location-dot"></i> Delhi NCR <i class="fa-solid fa-chevron-down"></i></span>
-            <span><i class="fa-solid fa-phone"></i> +91 98765 43210</span>
+            <span><i class="fa-solid fa-phone"></i> +91 8743959405</span>
             <span class="hiring-tag"><i class="fa-solid fa-circle-check"></i> Hiring Trusted Labour Since 2020</span>
         </div>
         <div class="top-right">
@@ -33,7 +30,6 @@
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
     <header class="main-header">
         <div class="logo">
             <span class="logo-num">11</span>
@@ -56,18 +52,17 @@
             <a href="#">Contact Us</a>
         </nav>
 
-        <div class="nav-buttons">
-            <a href="#" class="btn-post"><i class="fa-solid fa-circle-plus"></i> Post Requirement</a>
-            <a href="#" class="btn-login"><i class="fa-regular fa-user"></i> Login / Signup</a>
+        <div class="header-actions">
+            <a href="tel:8743959405" class="btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+            <a href="https://wa.me/918882301806" target="_blank" class="btn-whatsapp-top"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
-                <!-- Verified Count Badge -->
-                <div class="verified-badge">
+                
+                <div class="verified-badge slide-in">
                     <i class="fa-solid fa-users"></i>
                     <div>
                         <strong>50,000+</strong>
@@ -75,50 +70,37 @@
                     </div>
                 </div>
 
-                <h1>Hire Verified Labour <br>in Your City <span class="highlight-text">Within Minutes</span></h1>
-                <p>Find skilled & unskilled labour for any work - Just for 1 Day or as per your requirement.</p>
+                <h1 class="fade-in">Hire Verified Labour <br>in Your City <span class="highlight-text">Within Minutes</span></h1>
+                <p class="fade-in delay-1">Find skilled & unskilled labour for any work - Just for 1 Day or as per your requirement.</p>
                 
-                <!-- Quick Features -->
-                <div class="features-list">
+                <div class="features-list fade-in delay-1">
                     <span><i class="fa-solid fa-circle-check"></i> Verified Labour</span>
                     <span><i class="fa-solid fa-circle-check"></i> Instant Booking</span>
                     <span><i class="fa-solid fa-circle-check"></i> Affordable Price</span>
                     <span><i class="fa-solid fa-circle-check"></i> 100% Reliable</span>
                 </div>
 
-                <!-- Search Bar Card -->
-                <div class="search-card">
+                <div class="search-card enquiry-form-card fade-in delay-2">
                     <div class="search-field">
-                        <label><i class="fa-solid fa-location-dot"></i> Select City</label>
-                        <select>
-                            <option>Delhi NCR</option>
-                        </select>
+                        <label><i class="fa-solid fa-user"></i> Name</label>
+                        <input type="text" id="eq_name" placeholder="Enter Name" required>
                     </div>
                     <div class="search-field">
-                        <label><i class="fa-solid fa-grip"></i> Select Category</label>
-                        <select>
-                            <option>All Categories</option>
-                        </select>
+                        <label><i class="fa-solid fa-phone"></i> Mobile No</label>
+                        <input type="tel" id="eq_phone" placeholder="Enter Mobile No" required>
                     </div>
                     <div class="search-field">
-                        <label><i class="fa-solid fa-calendar-days"></i> Date Required</label>
-                        <select>
-                            <option>Select Date</option>
-                        </select>
+                        <label><i class="fa-solid fa-location-dot"></i> City</label>
+                        <input type="text" id="eq_city" placeholder="Enter City" required>
                     </div>
-                    <div class="search-field count-field">
-                        <label>No. of Labour</label>
-                        <div class="counter">
-                            <button>-</button>
-                            <input type="text" value="1" readonly>
-                            <button>+</button>
-                        </div>
+                    <div class="search-field message-field">
+                        <label><i class="fa-regular fa-comment-dots"></i> Message</label>
+                        <input type="text" id="eq_message" placeholder="Requirement text...">
                     </div>
-                    <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Search Labour</button>
+                    <button class="btn-search" onclick="triggerWhatsAppEnquiry()">Get Labour Now <i class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
 
-                <!-- Popular Searches -->
-                <div class="popular-searches">
+                <div class="popular-searches fade-in delay-2">
                     <span>Popular Searches:</span>
                     <a href="#">Painter in Delhi</a>
                     <a href="#">Electrician in Gurgaon</a>
@@ -128,24 +110,47 @@
                 </div>
             </div>
 
-            <!-- Right Content / Trust Badges Area -->
-            <div class="hero-right-badges">
-                <!-- placeholder background handle karega main images ko -->
-                <div class="trust-box">
-                    <i class="fa-solid fa-shield-check icon-green"></i>
+            <div class="hero-right-badges slide-in">
+                <div class="trust-box float-animation">
+                    <i class="fa-solid fa-shield-halved icon-green"></i>
                     <span>Aadhaar Verified</span>
                 </div>
-                <div class="trust-box">
+                <div class="trust-box float-animation delay-1">
                     <i class="fa-solid fa-star icon-orange"></i>
                     <span><strong>4.8/5</strong> Customer Rating</span>
                 </div>
-                <div class="trust-box">
-                    <i class="fa-solid fa-location-dot icon-green"></i>
+                <div class="trust-box float-animation delay-2">
+                    <i class="fa-solid fa-map-location-dot icon-green"></i>
                     <span><strong>200+</strong> Cities Covered</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+    function triggerWhatsAppEnquiry() {
+        const name = document.getElementById('eq_name').value.trim();
+        const mobile = document.getElementById('eq_phone').value.trim();
+        const city = document.getElementById('eq_city').value.trim();
+        const message = document.getElementById('eq_message').value.trim() || 'Not Specified';
+
+        if(!name || !mobile || !city) {
+            alert("Kripya Name, Mobile, aur City fields ko fill karein.");
+            return;
+        }
+
+        const targetNum = "918882301806";
+        
+        // Exact formatting as requested
+        let textMsg = `hello\nI would like to hire labour \ndetails:\n`;
+        textMsg += `name - ${name}\n`;
+        textMsg += `mobile - ${mobile}\n`;
+        textMsg += `city - ${city}\n`;
+        textMsg += `message - ${message}`;
+
+        const finalUrl = `https://api.whatsapp.com/send?phone=${targetNum}&text=${encodeURIComponent(textMsg)}`;
+        window.open(finalUrl, '_blank');
+    }
+    </script>
 </body>
 </html>
