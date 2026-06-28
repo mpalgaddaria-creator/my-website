@@ -1,20 +1,192 @@
-/* --- HERO SECTION PERFECT LAYOUT FIX --- */
+/* --- BASE RESET & FONTS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- TOP ANNOUNCEMENT BAR --- */
+.top-bar {
+    background-color: #002147;
+    color: #ffffff;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-left, .top-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hiring-tag {
+    background: #27ae60;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- COMPLETE NAVIGATION MENU & HEADER CSS --- */
+.main-header {
+    background: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-num {
+    background: #002147;
+    color: #ffb900;
+    font-size: 28px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #002147;
+    line-height: 1;
+}
+
+.brand-sub {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffb900;
+    letter-spacing: 2px;
+}
+
+.logo-text small {
+    font-size: 10px;
+    color: #27ae60;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Menu Items Styling */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-menu a i {
+    font-size: 11px;
+    color: #a0aec0;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: #002147;
+    font-weight: 600;
+}
+
+/* Header Action Buttons */
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-post-req {
+    background: #ffb900;
+    color: #002147;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+.btn-post-req:hover {
+    background: #e0a300;
+}
+
+.btn-login {
+    background: #ffffff;
+    color: #4a5568;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+.btn-login:hover {
+    background: #f7fafc;
+    color: #002147;
+    border-color: #a0aec0;
+}
+
+/* --- BANNER WHITE BACKGROUND & RIGHT LABOUR POSITION FIX --- */
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 460px; /* Banner ki height ke mutabik perfect desktop ratio */
+    min-height: 480px; 
     padding: 50px 40px;
     margin-top: 0;
     
-    /* 1. Yeh color image ke left-side wale background se perfectly blend ho jayega */
-    background-color: #f3f8fe; 
+    /* 1. Left side ka tint hatakar baaki poora portion white rakha hai */
+    background-color: #ffffff; 
     
-    /* 2. Image ko humesha right side me daba kar rakhega */
+    /* 2. Image sirf right side me hi show hogi */
     background-image: url('banner.jpg');
     background-repeat: no-repeat;
     background-position: right center;
     
-    /* 3. CRITICAL FIX: Yeh image ko stretch/zoom nahi hone dega, jisse labour right me hi rahenge */
+    /* 3. Image ko screen ratio ke mutabik bina zoom kiye fit rakhega */
     background-size: auto 100%; 
     
     display: flex;
@@ -30,9 +202,9 @@
     align-items: center;
 }
 
-/* Content ko left side me set rakhne ke liye constraint */
+/* Content strictly left side ke white space me rahega */
 .hero-content {
-    max-width: 50%; /* Isko 50% kiya taaki text right side ke labour ko touch na kare */
+    max-width: 48%; 
     z-index: 5;
     text-align: left;
 }
@@ -46,6 +218,7 @@
     border-radius: 30px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     margin-bottom: 25px;
+    border: 1px solid #edf2f7;
 }
 .verified-badge i { color: #3498db; font-size: 18px; }
 .verified-badge strong { color: #002147; font-size: 15px; }
@@ -86,7 +259,7 @@
     gap: 6px;
 }
 
-/* Enquiry Form Horizontal Design */
+/* Inline Enquiry Search Bar Card */
 .enquiry-form-card {
     background: #ffffff;
     padding: 10px 15px 10px 25px;
@@ -97,7 +270,7 @@
     box-shadow: 0 15px 38px rgba(0, 0, 0, 0.08);
     gap: 10px;
     margin-bottom: 25px;
-    border: 1px solid rgba(0,0,0,0.02);
+    border: 1px solid #edf2f7;
 }
 
 .search-field {
@@ -138,7 +311,7 @@
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -147,7 +320,6 @@
 .btn-search:hover {
     background: #002147;
     color: #ffffff;
-    transform: scale(1.02);
 }
 
 .popular-searches {
@@ -169,7 +341,7 @@
 }
 .popular-searches a:hover { background: #e2e8f0; }
 
-/* Right Floating Badges Overlay */
+/* Right Floating Badges (Over the banner building/crane graphic) */
 .hero-right-badges {
     display: flex;
     flex-direction: column;
@@ -199,14 +371,17 @@
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 1200px) {
-    .hero-content { max-width: 55%; }
+    .hero-content { max-width: 52%; }
     .hero-section { background-size: auto 90%; }
 }
 
 @media (max-width: 992px) {
+    .main-header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    .nav-menu { flex-wrap: wrap; justify-content: center; gap: 12px; }
+    
     .hero-section { 
         background-image: none;
-        background-color: #f3f8fe; 
+        background-color: #ffffff; 
         padding: 45px 20px;
         min-height: auto;
     }
