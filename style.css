@@ -103,26 +103,30 @@ body {
 }
 .btn-call:hover, .btn-whatsapp-top:hover { transform: translateY(-2px); }
 
-/* Main Section Layout */
+/* Main Section Layout Fixed Position for Custom Banner */
 .hero-section {
-    padding: 70px 50px 110px 50px;
-    background: linear-gradient(135deg, #f4f8fc 0%, #e9f1f8 100%);
+    padding: 80px 50px 120px 50px;
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1541535650810-10d26f5c2ab3?q=80&w=1200&auto=format&fit=crop'); 
+    background-color: #fff; /* Image white background ke sath merge hoga */
+    background-image: url('banner.jpg'); 
     background-repeat: no-repeat;
-    background-position: right top;
-    background-size: 50%;
+    background-position: right center; /* Workers right side mein perfectly fit rahenge */
+    background-size: contain; /* Banner stretch ya distort nahi hoga */
+    display: flex;
+    align-items: center;
+    min-height: 520px;
 }
 
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.hero-content { max-width: 65%; }
+.hero-content { max-width: 60%; z-index: 5; }
 
 /* Badge style components */
 .verified-badge {
@@ -173,7 +177,7 @@ body {
     border-right: 1px solid #edf2f7;
     flex: 1;
 }
-.message-field { flex: 1.3; } /* Message box gets slightly wider area */
+.message-field { flex: 1.3; } 
 .search-field:nth-last-of-type(2) { border-right: none; }
 
 .search-field label {
@@ -219,7 +223,7 @@ body {
 .popular-searches a:hover { background: #e2e8f0; }
 
 /* Right Metrics Display Container */
-.hero-right-badges { display: flex; flex-direction: column; gap: 18px; }
+.hero-right-badges { display: flex; flex-direction: column; gap: 18px; z-index: 5; }
 .trust-box {
     background: #fff;
     padding: 14px 22px;
@@ -258,7 +262,6 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* Subtle Hover Floating Animation for side elements */
 .float-animation { animation: floatingEffect 4s ease-in-out infinite; }
 .float-animation.delay-1 { animation-delay: 1s; }
 .float-animation.delay-2 { animation-delay: 2s; }
@@ -268,17 +271,32 @@ body {
     50% { transform: translateY(-6px); }
 }
 
-/* Hero Section Layout with custom Banner */
-.hero-section {
-    padding: 80px 50px 120px 50px;
-    position: relative;
-    
-    /* Aapki image_15764b.jpg yahan background mein fit ho jayegi */
-    background-image: url('banner.jpg'); 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover; /* Poore section mein perfect stretch hogi */
-    
-    display: flex;
-    align-items: center;
+/* --- Mobile Responsive Updates --- */
+@media (max-width: 1200px) {
+    .hero-section { background-position: calc(100% + 150px) center; } /* Wider screen safety shift */
+}
+
+@media (max-width: 992px) {
+    .main-header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    .nav-menu { flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .hero-section { 
+        background-image: none; /* Mobile screens par image hat jayegi taaki text clear dikhe */
+        background-color: #f4f8fc; 
+        padding: 40px 20px;
+    }
+    .hero-container { flex-direction: column; gap: 30px; }
+    .hero-content { max-width: 100%; }
+    .enquiry-form-card { border-radius: 20px; flex-direction: column; padding: 20px; gap: 15px; }
+    .search-field { border-right: none; border-bottom: 1px solid #edf2f7; padding: 8px 0; width: 100%; }
+    .btn-search { width: 100%; justify-content: center; border-radius: 10px; }
+    .hero-right-badges { flex-direction: row; flex-wrap: wrap; justify-content: center; width: 100%; }
+    .trust-box { min-width: 160px; }
+}
+
+@media (max-width: 576px) {
+    .top-bar { display: none; } /* Mobile data optimization space saving */
+    .hero-content h1 { font-size: 30px; }
+    .highlight-text { font-size: 36px; }
+    .features-list { flex-direction: column; gap: 8px; }
+    .hero-right-badges { flex-direction: column; width: 100%; }
 }
