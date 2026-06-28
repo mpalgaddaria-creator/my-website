@@ -103,15 +103,15 @@ body {
 }
 .btn-call:hover, .btn-whatsapp-top:hover { transform: translateY(-2px); }
 
-/* Main Section Layout */
+/* --- YAHAN PAR BADLAV KIYA HAI --- */
 .hero-section {
     padding: 70px 50px 110px 50px;
     background: linear-gradient(135deg, #f4f8fc 0%, #e9f1f8 100%);
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1541535650810-10d26f5c2ab3?q=80&w=1200&auto=format&fit=crop'); 
+    background-image: url('banner.jpg'); 
     background-repeat: no-repeat;
-    background-position: right top;
-    background-size: 50%;
+    background-position: right center; 
+    background-size: contain; 
 }
 
 .hero-container {
@@ -173,7 +173,7 @@ body {
     border-right: 1px solid #edf2f7;
     flex: 1;
 }
-.message-field { flex: 1.3; } /* Message box gets slightly wider area */
+.message-field { flex: 1.3; } 
 .search-field:nth-last-of-type(2) { border-right: none; }
 
 .search-field label {
@@ -258,7 +258,6 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* Subtle Hover Floating Animation for side elements */
 .float-animation { animation: floatingEffect 4s ease-in-out infinite; }
 .float-animation.delay-1 { animation-delay: 1s; }
 .float-animation.delay-2 { animation-delay: 2s; }
