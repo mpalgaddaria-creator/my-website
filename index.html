@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Day Labour - Hero Section</title>
+    <title>1Day Labour - Premium Hero Section</title>
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
             <span><i class="fas fa-map-marker-alt"></i> Delhi NCR</span>
@@ -27,6 +34,7 @@
         </div>
     </div>
 
+    <!-- Navigation Header -->
     <header class="main-header">
         <div class="logo">
             <span class="logo-num">11</span>
@@ -36,15 +44,50 @@
             </div>
         </div>
         <nav class="nav-menu">
-            <a href="#" class="active">Home</a>
-            <div class="dropdown"><a href="#">Find Labour <i class="fas fa-chevron-down"></i></a></div>
-            <div class="dropdown"><a href="#">For Labour <i class="fas fa-chevron-down"></i></a></div>
-            <div class="dropdown"><a href="#">Cities <i class="fas fa-chevron-down"></i></a></div>
-            <div class="dropdown"><a href="#">Services <i class="fas fa-chevron-down"></i></a></div>
-            <a href="#">How It Works</a>
-            <a href="#">Blog</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
+            <a href="#" class="nav-item active">Home</a>
+            
+            <!-- Modern Dropdown Menu Items -->
+            <div class="dropdown">
+                <a href="#" class="nav-item">Find Labour <i class="fas fa-chevron-down drop-icon"></i></a>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fas fa-paint-roller"></i> Construction & Painters</a>
+                    <a href="#"><i class="fas fa-bolt"></i> Electricians</a>
+                    <a href="#"><i class="fas fa-wrench"></i> Plumbers</a>
+                    <a href="#"><i class="fas fa-hammer"></i> Carpenters</a>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <a href="#" class="nav-item">For Labour <i class="fas fa-chevron-down drop-icon"></i></a>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fas fa-user-plus"></i> Register as Worker</a>
+                    <a href="#"><i class="fas fa-briefcase"></i> Daily Wages Guide</a>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <a href="#" class="nav-item">Cities <i class="fas fa-chevron-down drop-icon"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">Delhi NCR</a>
+                    <a href="#">Noida</a>
+                    <a href="#">Gurgaon</a>
+                    <a href="#">Ghaziabad</a>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <a href="#" class="nav-item">Services <i class="fas fa-chevron-down drop-icon"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">Residential Contract</a>
+                    <a href="#">Commercial Project</a>
+                    <a href="#">On-demand Help</a>
+                </div>
+            </div>
+            
+            <a href="#" class="nav-item">How It Works</a>
+            <a href="#" class="nav-item">Blog</a>
+            <a href="#" class="nav-item">About Us</a>
+            <a href="#" class="nav-item">Contact Us</a>
         </nav>
         <div class="header-buttons">
             <a href="tel:+918743959405" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
@@ -52,8 +95,10 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-container">
+            <!-- Left Side: Content & Form -->
             <div class="hero-content">
                 <div class="verified-badge">
                     <i class="fas fa-users"></i> 50,000+ Verified Labour
@@ -61,7 +106,7 @@
                 
                 <h2 class="hero-title">
                     Hire Verified Labour <br>
-                    in Your City <span class="highlight">Within Minutes</span>
+                    in Your City <span class="highlight-container"><span class="highlight-text">Within Minutes</span></span>
                 </h2>
                 
                 <p class="hero-subtitle">
@@ -69,12 +114,13 @@
                 </p>
 
                 <div class="trust-bullet-points">
-                    <span><i class="fas fa-check"></i> Verified Labour</span>
-                    <span><i class="fas fa-check"></i> Instant Booking</span>
-                    <span><i class="fas fa-check"></i> Affordable Price</span>
-                    <span><i class="fas fa-check"></i> 100% Reliable</span>
+                    <span><i class="fas fa-check-circle"></i> Verified Labour</span>
+                    <span><i class="fas fa-check-circle"></i> Instant Booking</span>
+                    <span><i class="fas fa-check-circle"></i> Affordable Price</span>
+                    <span><i class="fas fa-check-circle"></i> 100% Reliable</span>
                 </div>
 
+                <!-- Enquiry Search Form -->
                 <div class="search-form-container">
                     <form action="#" class="search-form">
                         <div class="input-group">
@@ -97,6 +143,7 @@
                     </form>
                 </div>
 
+                <!-- Popular Searches -->
                 <div class="popular-searches">
                     <span class="label">Popular Searches:</span>
                     <a href="#">Painter in Delhi</a>
@@ -107,11 +154,14 @@
                 </div>
             </div>
 
+            <!-- Right Side: Image File and Floating Badges -->
             <div class="hero-image-wrapper">
                 <div class="image-mask">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Labour Team" class="labour-img">
+                    <!-- Dynamic structural asset frame -->
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Labour Team Layout" class="labour-img">
                 </div>
 
+                <!-- Floating Cards Structure matching layout -->
                 <div class="floating-cards">
                     <div class="f-card">
                         <div class="icon-box shield"><i class="fas fa-shield-alt"></i></div>
@@ -129,6 +179,7 @@
             </div>
         </div>
 
+        <!-- Wave Element Grid Base Divider -->
         <div class="bottom-wave">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,55.05,16.22,83.1,22.66,144.14,36.64,208.36,44.54,321.39,56.44Z" class="shape-fill"></path>
