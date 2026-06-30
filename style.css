@@ -1192,3 +1192,218 @@ body {
         gap: 12px;
     }
 }
+
+/* ==========================================================================
+   Advance 10x Improved "How It Works" Layout Stylesheet
+   ========================================================================== */
+.how-it-works-section {
+    padding: 100px 5%;
+    background-color: #fcfdfe;
+    position: relative;
+    overflow: hidden;
+}
+
+.hw-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Header Configurations */
+.hw-header-block {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 70px auto;
+}
+
+.hw-sub-tag {
+    color: #a80a45;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.hw-main-heading {
+    font-size: 42px;
+    color: #0b2240;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+.hw-lead-text {
+    font-size: 15px;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Steps Grid Setup with Pseudo Connector Tracking Lines */
+.hw-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    position: relative;
+}
+
+/* Desktop Horizontal Connector Lines */
+.hw-steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 55px; /* Center aligned with icons */
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, #edf2f7 0%, #cbd5e0 50%, #edf2f7 100%);
+    z-index: 1;
+}
+
+/* Individual Cards Structure */
+.hw-step-card {
+    background: #ffffff;
+    padding: 40px 25px 30px 25px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 10px 30px rgba(11, 34, 64, 0.02);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Floating Numeric Background Label */
+.hw-step-card::after {
+    content: attr(data-step);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #edf2f7;
+    transition: all 0.3s ease;
+}
+
+/* Modern Hover States */
+.hw-step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(11, 34, 64, 0.08);
+    border-color: #e2e8f0;
+}
+
+.hw-step-card:hover::after {
+    color: rgba(168, 10, 69, 0.1);
+}
+
+/* Gradient Icon Wrappers */
+.hw-icon-wrapper {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #ffffff;
+    margin: 0 auto 25px auto;
+    position: relative;
+    z-index: 3;
+    transition: transform 0.4s ease;
+}
+
+.hw-step-card:hover .hw-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Colors extracted dynamically mimicking image_70a01f.png gradients but improved */
+.geo-blue { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); box-shadow: 0 10px 20px rgba(0, 114, 255, 0.2); }
+.geo-green { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); box-shadow: 0 10px 20px rgba(56, 239, 125, 0.2); }
+.geo-orange { background: linear-gradient(135deg, #ff9900 0%, #ff5e62 100%); box-shadow: 0 10px 20px rgba(255, 94, 98, 0.2); }
+.geo-purple { background: linear-gradient(135deg, #7f00ff 0%, #e100ff 100%); box-shadow: 0 10px 20px rgba(225, 0, 255, 0.2); }
+
+/* Micro Interaction Pulse Effects (Advanced Layer) */
+.hw-pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.hw-step-card:hover .hw-pulse-ring {
+    animation: hw-pulse-glow 1.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes hw-pulse-glow {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Content Area Configuration */
+.hw-content-box h3 {
+    font-size: 19px;
+    color: #0b2240;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.hw-content-box p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Perfect Responsive Overrides (Breakpoints For Smooth Scaling)
+   ========================================================================== */
+@media (max-width: 1150px) {
+    .hw-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    /* Disable Desktop line layout for Tablet Grid matrix */
+    .hw-steps-grid::before {
+        display: none;
+    }
+    .hw-main-heading {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works-section {
+        padding: 60px 4%;
+    }
+    .hw-header-block {
+        margin-bottom: 45px;
+    }
+    .hw-main-heading {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 580px) {
+    .hw-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .hw-step-card {
+        padding: 30px 20px;
+    }
+    /* Vertical Connector Lines for Mobile Layout stack view */
+    .hw-step-card:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 15px;
+        background-color: #cbd5e0;
+    }
+}
