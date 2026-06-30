@@ -482,3 +482,248 @@ body {
     .nav-menu { display: none; }
     .underline-svg { margin-left: 0; width: 200px; }
 }
+
+/* ==========================================================================
+   Popular Labour Services Section - High UI/UX & Advanced SEO Style
+   ========================================================================== */
+
+.popular-services-section {
+    padding: 64px 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Section Header Styling */
+.services-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.header-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.badge-line {
+    height: 4px;
+    width: 32px;
+    background-color: #fbbf24;
+    border-radius: 9999px;
+}
+
+.badge-text {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #f59e0b;
+}
+
+.services-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.025em;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .services-title {
+        font-size: 36px;
+    }
+}
+
+.services-subtitle {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #64748b;
+    max-width: 448px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .services-subtitle {
+        font-size: 16px;
+    }
+}
+
+/* Grid Layout Architecture */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 640px) {
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+}
+
+/* Modern Card Design & Micro-Interactions */
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+    text-decoration: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* Icon Wrapper and Scale Effect */
+.icon-wrapper {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .icon-wrapper {
+    transform: scale(1.1);
+}
+
+.service-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.service-name {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    transition: color 0.2s ease;
+}
+
+/* Custom Bottom Hover Line System (Dynamic Color Palettes) */
+.bottom-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    origin: left;
+}
+
+.service-card:hover .bottom-indicator {
+    transform: scaleX(1);
+}
+
+/* Dynamic Color Palettes for each Category */
+.group-amber .icon-wrapper { background-color: #fef3c7; }
+.group-amber .bottom-indicator { background-color: #f59e0b; }
+.group-amber:hover .service-name { color: #d97706; }
+
+.group-blue .icon-wrapper { background-color: #dbeafe; }
+.group-blue .bottom-indicator { background-color: #3b82f6; }
+.group-blue:hover .service-name { color: #2563eb; }
+
+.group-orange .icon-wrapper { background-color: #ffedd5; }
+.group-orange .bottom-indicator { background-color: #f97316; }
+.group-orange:hover .service-name { color: #ea580c; }
+
+.group-purple .icon-wrapper { background-color: #f3e8ff; }
+.group-purple .bottom-indicator { background-color: #a855f7; }
+.group-purple:hover .service-name { color: #9333ea; }
+
+.group-emerald .icon-wrapper { background-color: #d1fae5; }
+.group-emerald .bottom-indicator { background-color: #10b981; }
+.group-emerald:hover .service-name { color: #059669; }
+
+.group-teal .icon-wrapper { background-color: #ccfbf1; }
+.group-teal .bottom-indicator { background-color: #14b8a6; }
+.group-teal:hover .service-name { color: #0d9488; }
+
+.group-cyan .icon-wrapper { background-color: #ecfeff; }
+.group-cyan .bottom-indicator { background-color: #06b6d4; }
+.group-cyan:hover .service-name { color: #0891b2; }
+
+.group-indigo .icon-wrapper { background-color: #e0e7ff; }
+.group-indigo .bottom-indicator { background-color: #6366f1; }
+.group-indigo:hover .service-name { color: #4f46e5; }
+
+/* View All CTA Button Styling */
+.services-cta-container {
+    text-align: center;
+}
+
+.btn-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: 2px solid #334155;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #334155;
+    text-decoration: none;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-view-all:hover {
+    border-color: #0f172a;
+    color: #0f172a;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+    width: 16px;
+    height: 16px;
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+
+.btn-view-all:hover .search-icon {
+    color: #0f172a;
+}
+
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.btn-view-all:hover .arrow-icon {
+    transform: translateX(4px);
+}
