@@ -953,3 +953,132 @@ a {
         display: none; /* Hide secondary image on very small phones to keep it clean */
     }
 }
+
+/* ================= SEO INTRO SECTION (CLEAN UI) ================= */
+.seo-intro-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.seo-intro-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Left Side: Text and SEO Formatting */
+.seo-text-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.seo-text-content h2 {
+    font-size: 36px;
+    line-height: 1.4;
+    color: #222;
+    margin-bottom: 25px;
+}
+
+.seo-text-content h2 span {
+    color: #ff6b00; /* Brand orange */
+}
+
+.seo-text-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.seo-text-content p strong {
+    color: #111;
+    font-weight: 700;
+}
+
+/* Buttons */
+.intro-cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-primary {
+    background-color: #ff6b00;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e65c00;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #ddd;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    border-color: #ff6b00;
+    color: #ff6b00;
+}
+
+/* Right Side: Modern Image Collage */
+.seo-image-collage {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: 250px 150px;
+    gap: 15px;
+    width: 100%;
+}
+
+.seo-image-collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px; /* Soft, modern corners */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Make the first image take up a large prominent space */
+.collage-img-1 {
+    grid-column: 1 / -1; /* Stretches across both columns */
+    grid-row: 1;
+}
+
+/* The second image sits neatly underneath */
+.collage-img-2 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    object-position: top; /* Ensures the helmets stay in view */
+}
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 900px) {
+    .seo-intro-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .intro-cta-buttons {
+        justify-content: center;
+    }
+
+    .seo-image-collage {
+        grid-template-rows: 200px 150px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
