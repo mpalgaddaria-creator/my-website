@@ -261,3 +261,209 @@ a {
         display: none; /* Hide menu on mobile for now */
     }
 }
+
+/* ================= SERVICES SECTION ================= */
+.services-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-header h2 span {
+    color: #ff6b00; /* Matching the orange brand color */
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Checkbox Trick for Slider (Hidden) */
+.view-all-checkbox {
+    display: none;
+}
+
+/* Grid Layout (5 items per row) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px 20px;
+    justify-items: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.service-card h3 {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ================= 3D FLIP CIRCLE ANIMATION ================= */
+.circle-container {
+    background-color: transparent;
+    width: 130px; /* Size of the circle */
+    height: 130px;
+    perspective: 1000px; /* Gives the 3D effect */
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+}
+
+.circle-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Trigger Flip on Hover (Desktop) & Focus/Tap (Mobile) */
+.circle-container:hover .circle-inner,
+.circle-container:focus .circle-inner {
+    transform: rotateY(180deg);
+}
+
+.circle-front, 
+.circle-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari support */
+    backface-visibility: hidden;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circle-back {
+    background: #f8f9fa;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 3px solid #ff6b00;
+}
+
+/* Icons inside the back of the card */
+.icon-btn {
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.call-icon {
+    border: 2px solid #007bff; /* Blue for call */
+}
+
+.wa-icon {
+    border: 2px solid #25D366; /* Green for WhatsApp */
+}
+
+/* ================= VIEW ALL / SLIDER LOGIC ================= */
+.extra-service {
+    display: none; /* Hidden by default */
+    opacity: 0;
+}
+
+/* When checkbox is checked, show the hidden services smoothly */
+.view-all-checkbox:checked ~ .services-grid .extra-service {
+    display: flex;
+    animation: fadeInService 0.5s forwards;
+}
+
+@keyframes fadeInService {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.view-all-wrapper {
+    margin-top: 50px;
+}
+
+.view-all-btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.view-all-btn:hover {
+    background-color: #ff6b00;
+}
+
+/* Toggle Text Logic */
+.hide-text {
+    display: none;
+}
+
+.view-all-checkbox:checked ~ .view-all-wrapper .view-all-btn .show-text {
+    display: none;
+}
+
+.view-all-checkbox:checked ~ .view-all-wrapper .view-all-btn .hide-text {
+    display: inline;
+}
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
+        gap: 30px 15px;
+    }
+    
+    .circle-container {
+        width: 110px; /* Slightly smaller circles on mobile */
+        height: 110px;
+    }
+
+    .service-card h3 {
+        font-size: 14px;
+    }
+}
