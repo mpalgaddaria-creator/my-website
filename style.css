@@ -467,3 +467,116 @@ a {
         font-size: 14px;
     }
 }
+
+/* ================= PARTNERS SECTION ================= */
+.partners-section {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Light grey background to separate from services */
+    overflow: hidden;
+}
+
+/* Container for the slider */
+.partners-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Premium Fade Effect on Left and Right edges */
+.partners-slider::before,
+.partners-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+}
+
+.partners-slider::before {
+    left: 0;
+    background: linear-gradient(to right, #f8f9fa 0%, rgba(248,249,250,0) 100%);
+}
+
+.partners-slider::after {
+    right: 0;
+    background: linear-gradient(to left, #f8f9fa 0%, rgba(248,249,250,0) 100%);
+}
+
+/* The track that actually moves */
+.partners-track {
+    display: inline-flex;
+    gap: 30px;
+    /* 25s controls the speed. Make it lower to go faster, higher to go slower */
+    animation: scrollPartners 25s linear infinite; 
+}
+
+/* PAUSE ON TOUCH / HOVER */
+.partners-track:hover,
+.partners-track:active {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+/* Modern Box UI for Partners */
+.partner-box {
+    background-color: #ffffff;
+    width: 200px;
+    height: 100px;
+    border-radius: 12px; /* Smooth rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft next-gen shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Prevents boxes from squeezing */
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.partner-box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.partner-box img {
+    max-width: 80%;
+    max-height: 70%;
+    object-fit: contain;
+    filter: grayscale(100%); /* Makes logos grey for a clean corporate look */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show original colors when hovered/touched */
+.partner-box:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* The continuous scrolling animation */
+@keyframes scrollPartners {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Moves the track left by exactly half its width (the 7 original items) */
+        transform: translateX(calc(-50% - 15px)); 
+    }
+}
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 768px) {
+    .partners-slider::before,
+    .partners-slider::after {
+        width: 60px; /* Smaller fade edges on mobile */
+    }
+    
+    .partner-box {
+        width: 150px;
+        height: 80px;
+    }
+}
